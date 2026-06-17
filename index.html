@@ -1108,13 +1108,6 @@
                 calculateProgress();
             });
         });
-            syllabusChecks[chKey] = cb.checked;
-            // Sync page checkbox
-            const targetPageCheck = document.querySelector(`input[data-checkbox="${chKey}"]`);
-            if (targetPageCheck) targetPageCheck.checked = cb.checked;
-            
-            calculateProgress();
-        }
 
         function calculateProgress() {
             const total = Object.keys(syllabusChecks).length;
