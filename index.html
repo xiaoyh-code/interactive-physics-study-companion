@@ -27,15 +27,31 @@
         }
     </script>
     
-    <!-- KaTeX for robust LaTeX-style formula typesetting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
-        delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false}
-        ]
-    });"></script>
+    <!-- MathJax 3 for robust LaTeX-style formula typesetting -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady().then(() => {
+                        console.log('MathJax rendering complete');
+                    });
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" async></script>
 
     <!-- Google Fonts for premium typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,7 +260,7 @@
                     <div>
                         <h4 class="text-xs font-extrabold text-amber-800 dark:text-amber-400 uppercase">Interactive Study Tip</h4>
                         <p class="text-xs text-amber-900/80 dark:text-amber-300 mt-1 leading-relaxed">
-                            Click on the <strong>My Study Notebook</strong> drawer on the right side of your desktop screen to jot down key insights while exploring! You can also toggle <strong>Flashcards</strong> or check off topics as you finish learning them.
+                            Use the chapter tabs on the left to navigate the syllabus. You can operate the interactive simulations and check off topics as you finish learning them.
                         </p>
                     </div>
                 </div>
@@ -1004,122 +1020,6 @@
 
         </main>
 
-        <!-- Right split workspace panel (takes 34% width, digitalizes the original split-page notes margin) -->
-        <aside id="workspace-sidebar" class="w-80 bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-y-auto hidden lg:flex">
-            <!-- Toggle tabs for right panel -->
-            <div class="flex border-b border-slate-200 dark:border-slate-800 shrink-0">
-                <button onclick="switchWorkspaceTab('notepad')" id="tab-work-notepad" class="flex-1 py-3 text-xs font-bold text-center border-b-2 border-physics-600 text-physics-600">NOTEPAD</button>
-                <button onclick="switchWorkspaceTab('checklist')" id="tab-work-checklist" class="flex-1 py-3 text-xs font-bold text-center text-slate-400 hover:text-slate-600">CHECKLIST</button>
-                <button onclick="switchWorkspaceTab('calc')" id="tab-work-calc" class="flex-1 py-3 text-xs font-bold text-center text-slate-400 hover:text-slate-600">CALCULATOR</button>
-            </div>
-
-            <!-- Workspace: Digital Scratch Notepad -->
-            <div id="work-pane-notepad" class="flex-1 p-4 flex flex-col space-y-4">
-                <div class="flex items-center justify-between">
-                    <span class="text-xxs font-extrabold uppercase tracking-widest text-slate-400">Study Scratchpad</span>
-                    <button onclick="clearScratchpad()" class="text-xxs text-rose-500 font-bold hover:underline">Clear Notes</button>
-                </div>
-                <!-- Drawing Canvas Pad -->
-                <div class="border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden h-36 bg-slate-50 dark:bg-slate-900 flex flex-col relative">
-                    <canvas id="sketchpad" class="w-full h-full cursor-crosshair"></canvas>
-                    <div class="absolute bottom-1 right-1 flex space-x-1">
-                        <button onclick="clearCanvas()" class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 text-[9px] font-bold rounded">Eraser</button>
-                    </div>
-                </div>
-                
-                <textarea id="notepad-text" placeholder="Type quick study insights here... (e.g. v = f * lambda, transverse oscillates perpendicular...)" class="flex-1 w-full p-3 text-xs border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:ring-1 focus:ring-physics-600 resize-none h-40 font-medium leading-relaxed"></textarea>
-                <p class="text-[10px] text-slate-400 text-center">Notepad edits are saved to temporary session memory.</p>
-            </div>
-
-            <!-- Workspace: Checklist tracker -->
-            <div id="work-pane-checklist" class="flex-1 p-4 space-y-4 hidden">
-                <span class="text-xxs font-extrabold uppercase tracking-widest text-slate-400 block mb-2">Study Task Checklist</span>
-                <div class="space-y-3" id="checklist-container">
-                    <!-- Javascript populates checkboxes from active checkboxes above -->
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-10" onchange="syncCheck('ch10', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 10: Wave Basics</strong>
-                            <span class="text-slate-400 text-[10px]">Transverse/Longitudinal, wave velocity.</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-11" onchange="syncCheck('ch11', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 11: EM Spectrum</strong>
-                            <span class="text-slate-400 text-[10px]">Frequency ordering, radiation safety.</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-12" onchange="syncCheck('ch12', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 12: Optical Physics & TIR</strong>
-                            <span class="text-slate-400 text-[10px]">Snell's Law, critical angle boundary rules.</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-13" onchange="syncCheck('ch13', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 13: Acoustics & Sound</strong>
-                            <span class="text-slate-400 text-[10px]">Hearing spectrum, pitch vs freq on CRO.</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-18" onchange="syncCheck('ch18', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 18: Pressure & Hydraulics</strong>
-                            <span class="text-slate-400 text-[10px]">Density calculations, Pascal's multiplier.</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-start space-x-3 text-xs p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                        <input type="checkbox" id="chk-list-19" onchange="syncCheck('ch19', this)" class="mt-0.5 rounded text-physics-600">
-                        <div>
-                            <strong class="block">Ch 19: Thermodynamics</strong>
-                            <span class="text-slate-400 text-[10px]">Latent heat calculations, ideal gas laws.</span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Workspace: Physics Sandbox Calculator -->
-            <div id="work-pane-calc" class="flex-1 p-4 space-y-4 hidden text-xs">
-                <span class="text-xxs font-extrabold uppercase tracking-widest text-slate-400 block mb-2">Equation Solver sandbox</span>
-                <div class="space-y-3">
-                    <div class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
-                        <h4 class="font-bold text-physics-600 mb-2">Wave Equation solver</h4>
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span>Freq $f$ (Hz):</span>
-                                <input type="number" id="calc-wave-f" value="200" class="w-20 p-1 border rounded bg-white dark:bg-slate-950 text-right">
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span>Lambda $\lambda$ (m):</span>
-                                <input type="number" id="calc-wave-l" value="0.12" step="0.01" class="w-20 p-1 border rounded bg-white dark:bg-slate-950 text-right">
-                            </div>
-                            <button onclick="calcWaveSpeed()" class="w-full py-1.5 bg-physics-600 text-white font-bold rounded hover:bg-physics-700 transition">Solve Wave Speed</button>
-                            <div class="text-center pt-1 font-bold text-physics-700 dark:text-physics-400" id="calc-wave-out">$v = 24 \text{ m/s}$</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
-                        <h4 class="font-bold text-physics-600 mb-2">Refractive Index / Critical Angle</h4>
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span>Index $n$:</span>
-                                <input type="number" id="calc-index-n" value="1.5" step="0.01" class="w-20 p-1 border rounded bg-white dark:bg-slate-950 text-right">
-                            </div>
-                            <button onclick="calcCriticalAngle()" class="w-full py-1.5 bg-physics-600 text-white font-bold rounded hover:bg-physics-700 transition">Solve Critical Angle</button>
-                            <div class="text-center pt-1 font-bold text-physics-700 dark:text-physics-400" id="calc-crit-out">$c = 41.81^\circ$</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
     </div>
 
     <!-- Master controller script -->
@@ -1189,20 +1089,6 @@
             if (tabId === 'density') initHydraulicsSim();
         }
 
-        // Switch Workspace Right Panel Tab
-        function switchWorkspaceTab(tab) {
-            document.querySelectorAll('[id^="work-pane-"]').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('[id^="tab-work-"]').forEach(btn => {
-                btn.classList.remove('border-b-2', 'border-physics-600', 'text-physics-600');
-                btn.classList.add('text-slate-400');
-            });
-            
-            document.getElementById('work-pane-' + tab).classList.remove('hidden');
-            const activeTab = document.getElementById('tab-work-' + tab);
-            activeTab.classList.add('border-b-2', 'border-physics-600', 'text-physics-600');
-            activeTab.classList.remove('text-slate-400');
-        }
-
         // Toggle Exam Answer Panels
         function toggleAnswer(ansId) {
             const ansDiv = document.getElementById(ansId);
@@ -1219,16 +1105,9 @@
             checkbox.addEventListener('change', function() {
                 const key = this.getAttribute('data-checkbox');
                 syllabusChecks[key] = this.checked;
-                
-                // Sync task list checkbox
-                const targetCheck = document.getElementById('chk-list-' + key.replace('ch', ''));
-                if (targetCheck) targetCheck.checked = this.checked;
-
                 calculateProgress();
             });
         });
-
-        function syncCheck(chKey, cb) {
             syllabusChecks[chKey] = cb.checked;
             // Sync page checkbox
             const targetPageCheck = document.querySelector(`input[data-checkbox="${chKey}"]`);
@@ -1336,29 +1215,7 @@
             document.getElementById('thermal-title').textContent = data.title;
             document.getElementById('thermal-math').textContent = '$$' + data.math + '$$';
             document.getElementById('thermal-desc').textContent = data.desc;
-            renderMathInElement(document.getElementById('thermal-math'));
-        }
-
-        // Wave Equation Solver
-        function calcWaveSpeed() {
-            const f = parseFloat(document.getElementById('calc-wave-f').value);
-            const l = parseFloat(document.getElementById('calc-wave-l').value);
-            if (isNaN(f) || isNaN(l)) return;
-            const v = (f * l).toFixed(2);
-            document.getElementById('calc-wave-out').innerHTML = `$v = ${v} \\text{ m/s}$`;
-            renderMathInElement(document.getElementById('calc-wave-out'));
-        }
-
-        // Critical Angle Solver
-        function calcCriticalAngle() {
-            const n = parseFloat(document.getElementById('calc-index-n').value);
-            if (isNaN(n) || n < 1) {
-                document.getElementById('calc-crit-out').innerHTML = "n must be >= 1";
-                return;
-            }
-            const c = (Math.asin(1 / n) * (180 / Math.PI)).toFixed(2);
-            document.getElementById('calc-crit-out').innerHTML = `$c = ${c}^\\circ$`;
-            renderMathInElement(document.getElementById('calc-crit-out'));
+            MathJax.typesetPromise([document.getElementById('thermal-math')]);
         }
 
         // ==========================================
@@ -1393,7 +1250,7 @@
                 document.getElementById('val-wave-freq').textContent = freq.toFixed(1) + ' Hz';
                 document.getElementById('val-wave-lambda').textContent = lambda.toFixed(0) + ' m';
                 document.getElementById('val-wave-velocity').innerHTML = `$v = ${velocity.toFixed(1)} \\text{ m/s}$`;
-                renderMathInElement(document.getElementById('val-wave-velocity'));
+                MathJax.typesetPromise([document.getElementById('val-wave-velocity')]);
 
                 // Draw static center equilibrium line
                 ctx.strokeStyle = '#94a3b8';
@@ -1611,7 +1468,7 @@
 
                 document.getElementById('val-hyd-force').textContent = f1 + ' N';
                 document.getElementById('val-hyd-out').innerHTML = `$F_2 = ${f2.toFixed(0)} \\text{ N}$`;
-                renderMathInElement(document.getElementById('val-hyd-out'));
+                MathJax.typesetPromise([document.getElementById('val-hyd-out')]);
 
                 const cy = canvas.height / 2;
 
@@ -1663,72 +1520,10 @@
             drawHydraulics();
         }
 
-        // ==========================================
-        // DYNAMIC SKETCHPAD NOTEPAD ENGINE
-        // ==========================================
-        const sketchpad = document.getElementById('sketchpad');
-        const sCtx = sketchpad.getContext('2d');
-        let drawing = false;
-
-        function initSketchpad() {
-            sketchpad.width = sketchpad.parentElement.clientWidth;
-            sketchpad.height = sketchpad.parentElement.clientHeight;
-            sCtx.strokeStyle = '#64748b';
-            sCtx.lineWidth = 1.5;
-            sCtx.lineCap = 'round';
-        }
-
-        sketchpad.addEventListener('mousedown', (e) => {
-            drawing = true;
-            sCtx.beginPath();
-            const rect = sketchpad.getBoundingClientRect();
-            sCtx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
-        });
-
-        sketchpad.addEventListener('mousemove', (e) => {
-            if (!drawing) return;
-            const rect = sketchpad.getBoundingClientRect();
-            sCtx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-            sCtx.stroke();
-        });
-
-        sketchpad.addEventListener('mouseup', () => drawing = false);
-        sketchpad.addEventListener('mouseleave', () => drawing = false);
-
-        // Touch event support for iPad/mobile study devices
-        sketchpad.addEventListener('touchstart', (e) => {
-            drawing = true;
-            sCtx.beginPath();
-            const rect = sketchpad.getBoundingClientRect();
-            const touch = e.touches[0];
-            sCtx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
-        });
-
-        sketchpad.addEventListener('touchmove', (e) => {
-            if (!drawing) return;
-            const rect = sketchpad.getBoundingClientRect();
-            const touch = e.touches[0];
-            sCtx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
-            sCtx.stroke();
-        });
-
-        sketchpad.addEventListener('touchend', () => drawing = false);
-
-        function clearCanvas() {
-            sCtx.clearRect(0, 0, sketchpad.width, sketchpad.height);
-        }
-
-        function clearScratchpad() {
-            document.getElementById('notepad-text').value = '';
-            clearCanvas();
-        }
-
         // Handle page layouts on start
         window.addEventListener('load', () => {
-            initSketchpad();
             switchTab('dashboard');
         });
-        window.addEventListener('resize', initSketchpad);
     </script>
 </body>
 </html>
