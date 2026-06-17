@@ -980,42 +980,950 @@
             <!-- ==========================================
                  TAB CONTENT: PRACTICE EXAMS & REVISION PAPERS
                  ========================================== -->
-            <div id="content-practice" class="tab-content space-y-6 hidden">
+                        <div id="content-practice" class="tab-content space-y-6 hidden">
                 <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
                     <span class="text-xs font-bold text-rose-600">Revision Assessment Center</span>
                     <h2 class="text-2xl font-black">All Chapters Practice Exam Booklet</h2>
                 </div>
 
-                <!-- Integrated Practice Paper Q12 -->
-                <div class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
-                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                        <h3 class="text-sm font-extrabold uppercase text-slate-900 dark:text-white">Q12 - Integrated Mechanical & Thermal Challenge [10 Marks]</h3>
-                        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">Hard</span>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-                        A metal container has a base area of $0.080 \text{ m}^2$. It contains $6.0 \text{ kg}$ of water. The water is heated from $18^\circ\text{C}$ to $100^\circ\text{C}$.
-                        <br><em>Given: $c_{\text{water}} = 4200 \text{ J / kg}^\circ\text{C}$, $g = 10 \text{ N/kg}$, $\rho_{\text{water}} = 1000 \text{ kg/m}^3$.</em>
-                    </p>
-                    <div class="space-y-3 text-xs pl-4">
-                        <p><strong>(a)</strong> Calculate the thermal energy needed to heat the water to $100^\circ\text{C}$. [3]</p>
-                        <p><strong>(b)</strong> Calculate the weight of the water. [1]</p>
-                        <p><strong>(c)</strong> Calculate the pressure exerted by the water on the container base due to its weight. [2]</p>
-                        <p><strong>(d)</strong> Use density to calculate the volume of water. [2]</p>
-                        <p><strong>(e)</strong> Calculate the depth of water in the container. [1]</p>
-                        <p><strong>(f)</strong> Verify your pressure answer using $p = h \rho g$. [1]</p>
-                    </div>
-                    <div class="pt-2">
-                        <button onclick="toggleAnswer('q12-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Multi-Stage Solutions</button>
-                    </div>
-                    <div id="q12-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
-                        <p><strong>(a)</strong> $Q = mc\Delta T = 6.0 \times 4200 \times (100 - 18) = 2,066,400 \text{ J}$. <span class="text-emerald-600 font-bold">[3 marks]</span></p>
-                        <p><strong>(b)</strong> $W = mg = 6.0 \times 10 = 60 \text{ N}$. <span class="text-emerald-600 font-bold">[1 mark]</span></p>
-                        <p><strong>(c)</strong> $p = F/A = 60 \text{ N} / 0.080 \text{ m}^2 = 750 \text{ Pa}$. <span class="text-emerald-600 font-bold">[2 marks]</span></p>
-                        <p><strong>(d)</strong> $V = m/\rho = 6.0 / 1000 = 0.006 \text{ m}^3$ (or $6.0 \text{ L}$). <span class="text-emerald-600 font-bold">[2 marks]</span></p>
-                        <p><strong>(e)</strong> $V = A \times h \implies h = V/A = 0.006 / 0.080 = 0.075 \text{ m}$ ($7.5 \text{ cm}$). <span class="text-emerald-600 font-bold">[1 mark]</span></p>
-                        <p><strong>(f)</strong> $p = h \rho g = 0.075 \times 1000 \times 10 = 750 \text{ Pa}$. (Matches (c) perfectly!) <span class="text-emerald-600 font-bold">[1 mark]</span></p>
-                    </div>
-                </div>
+<!-- Part I: Chapters 10–13 -->
+<section id="part-i" class="space-y-8">
+  <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3">Part I: Chapters 10–13</h2>
+
+  <!-- Section A: Waves -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">A. Properties of Waves</h3>
+
+    <!-- q1: Mini practice wave speed -->
+    <div id="q1" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Wave Speed</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A ripple has wavelength $0.080\,\text{m}$ and frequency $12.5\,\text{Hz}$. Calculate the wave speed.</p>
+      </div>
+      <button onclick="toggleAnswer('q1-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q1-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$v = f\lambda = 12.5 \times 0.080 = 1.0\,\text{m s}^{-1}$$</p>
+      </div>
+    </div>
+
+    <!-- q2: Worked pattern wave -->
+    <div id="q2" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Wave Equation</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A wave has period $0.025\,\text{s}$ and wavelength $0.60\,\text{m}$.</p>
+      </div>
+      <button onclick="toggleAnswer('q2-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q2-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$f = \frac{1}{T} = \frac{1}{0.025} = 40\,\text{Hz}$$</p>
+        <p>$$v = f\lambda = 40 \times 0.60 = 24\,\text{m s}^{-1}$$</p>
+      </div>
+    </div>
+
+    <!-- q3: Q1 Waves and wave graphs -->
+    <div id="q3" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q1 — Waves and Wave Graphs</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[7 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>The displacement-time graph of a wave is observed on an oscilloscope.</p>
+        <p>One complete cycle takes $5.0\,\text{ms}$. The maximum displacement from the equilibrium position is $3.2\,\text{cm}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State what is meant by the amplitude of a wave. [1]</li>
+          <li>(b) State the period of this wave in seconds. [1]</li>
+          <li>(c) Calculate the frequency of the wave. [2]</li>
+          <li>(d) The wave travels at $24\,\text{m s}^{-1}$. Calculate its wavelength. [2]</li>
+          <li>(e) State whether sound is a transverse or longitudinal wave. [1]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q3-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q3-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Maximum displacement from the equilibrium position.</li>
+          <li>(b) $T = 5.0\,\text{ms} = 0.0050\,\text{s}$</li>
+          <li>(c) $$f = \frac{1}{T} = \frac{1}{0.0050} = 200\,\text{Hz}$$</li>
+          <li>(d) $$\lambda = \frac{v}{f} = \frac{24}{200} = 0.12\,\text{m}$$</li>
+          <li>(e) Longitudinal wave.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section B: Electromagnetic Spectrum -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">B. Electromagnetic Spectrum</h3>
+
+    <!-- q4: Mini practice EM wavelength -->
+    <div id="q4" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: EM Spectrum Order</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Name one electromagnetic wave with a longer wavelength than visible light and one with a shorter wavelength than ultraviolet radiation.</p>
+      </div>
+      <button onclick="toggleAnswer('q4-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q4-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Longer wavelength than visible light: radio waves / microwaves / infrared.</p>
+        <p>Shorter wavelength than ultraviolet radiation: X-rays / gamma rays.</p>
+      </div>
+    </div>
+
+    <!-- q5: Exam-style explanation gamma -->
+    <div id="q5" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Exam-Style Explanation: Gamma Rays</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Explain why gamma rays can be useful for cancer treatment but dangerous to healthy tissue.</p>
+      </div>
+      <button onclick="toggleAnswer('q5-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q5-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Gamma rays are strongly ionising and can damage or kill cells. In cancer treatment, a focused beam of gamma rays can destroy cancerous tumour cells. However, because gamma rays also damage healthy cells and DNA, exposure must be carefully controlled and shielded.</p>
+      </div>
+    </div>
+
+    <!-- q6: Q3 EM spectrum -->
+    <div id="q6" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q3 — Electromagnetic Spectrum and Radiation Safety</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[8 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Arrange the following electromagnetic waves in order of increasing frequency: radio waves, ultraviolet, microwaves, gamma rays, infrared, visible light, X-rays. [3]</li>
+          <li>(b) State one medical use of X-rays. [1]</li>
+          <li>(c) Explain why bones appear lighter than soft tissue on an X-ray image. [2]</li>
+          <li>(d) A radiographer stands behind a lead screen when taking X-ray images. Explain why this is a suitable safety measure. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q6-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q6-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays.</li>
+          <li>(b) Medical imaging / detecting broken bones.</li>
+          <li>(c) Bones absorb more X-rays than soft tissue, so fewer X-rays reach the detector beneath the bones. This makes bones appear lighter on the image.</li>
+          <li>(d) Lead is a dense material that absorbs X-rays. The screen reduces the radiographer's exposure to ionising radiation.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section C: Light Waves -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">C. Light Waves</h3>
+
+    <!-- q7: Worked pattern refractive index -->
+    <div id="q7" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Refractive Index</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A ray travels from air into glass. The angle of incidence is $50^\circ$ and the angle of refraction is $31^\circ$.</p>
+      </div>
+      <button onclick="toggleAnswer('q7-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q7-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$n = \frac{\sin i}{\sin r} = \frac{\sin 50^\circ}{\sin 31^\circ} = 1.49$$</p>
+      </div>
+    </div>
+
+    <!-- q8: Worked pattern TIR -->
+    <div id="q8" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Critical Angle and TIR</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Glass has refractive index $1.62$.</p>
+      </div>
+      <button onclick="toggleAnswer('q8-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q8-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$\sin c = \frac{1}{n} = \frac{1}{1.62} = 0.617$$</p>
+        <p>$$c = 38.1^\circ$$</p>
+        <p>If a ray inside the glass strikes the boundary at $45^\circ$, total internal reflection occurs because $45^\circ > 38.1^\circ$.</p>
+      </div>
+    </div>
+
+    <!-- q9: Q7 Refraction and TIR -->
+    <div id="q9" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q7 — Refraction and Total Internal Reflection</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[9 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A ray of light travels from air into a transparent block.</p>
+        <p>Angle of incidence $= 55^\circ$. Angle of refraction $= 32^\circ$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State the equation linking refractive index, angle of incidence and angle of refraction. [1]</li>
+          <li>(b) Calculate the refractive index of the block. [3]</li>
+          <li>(c) Light now travels inside the block towards the surface with air. The critical angle of the block is $42^\circ$. State what happens when the angle of incidence inside the block is $30^\circ$, $42^\circ$, and $50^\circ$. [3]</li>
+          <li>(d) Explain why optical fibres use total internal reflection. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q9-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q9-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$n = \frac{\sin i}{\sin r}$$</li>
+          <li>(b) $$n = \frac{\sin 55^\circ}{\sin 32^\circ} = 1.51$$</li>
+          <li>(c) At $30^\circ$: refracts out into air. At $42^\circ$: refracts along the boundary (angle of refraction $= 90^\circ$). At $50^\circ$: total internal reflection occurs.</li>
+          <li>(d) Total internal reflection keeps light inside the fibre with little energy loss, allowing signals to travel long distances.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section D: Sound -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">D. Sound</h3>
+
+    <!-- q10: Mini practice oscilloscope -->
+    <div id="q10" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Oscilloscope Trace</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[4 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A sound trace has one complete cycle across $4.0\,\text{cm}$. The time-base is $0.25\,\text{ms cm}^{-1}$. Find the period and frequency.</p>
+      </div>
+      <button onclick="toggleAnswer('q10-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q10-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$T = 4.0 \times 0.25 = 1.0\,\text{ms} = 0.0010\,\text{s}$$</p>
+        <p>$$f = \frac{1}{T} = \frac{1}{0.0010} = 1000\,\text{Hz}$$</p>
+      </div>
+    </div>
+
+    <!-- q11: Q5 Oscilloscope and sound -->
+    <div id="q11" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q5 — Oscilloscope and Sound</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[7 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>An oscilloscope is used to display the sound from a loudspeaker.</p>
+        <p>Time-base setting $= 0.20\,\text{ms}$ per division. One complete wave occupies $2.5$ divisions. Vertical setting $= 1.5\,\text{V}$ per division. The amplitude of the trace is $3$ divisions.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Calculate the period of the wave. [2]</li>
+          <li>(b) Calculate the frequency of the sound. [2]</li>
+          <li>(c) Calculate the amplitude of the trace in volts. [1]</li>
+          <li>(d) The volume of the sound is increased but the pitch is unchanged. Describe how the oscilloscope trace changes. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q11-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q11-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$T = 2.5 \times 0.20 = 0.50\,\text{ms} = 5.0 \times 10^{-4}\,\text{s}$$</li>
+          <li>(b) $$f = \frac{1}{T} = \frac{1}{5.0 \times 10^{-4}} = 2000\,\text{Hz}$$</li>
+          <li>(c) Amplitude $= 3 \times 1.5 = 4.5\,\text{V}$</li>
+          <li>(d) The trace becomes taller (larger amplitude) because loudness depends on amplitude. The wavelength on the screen stays the same because pitch/frequency is unchanged.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- q12: Q10 Sound sonar Doppler -->
+    <div id="q12" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q10 — Sound, Sonar and Doppler Effect</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[7 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A ship sends an ultrasound pulse vertically downwards to the seabed. The reflected pulse is detected $0.064\,\text{s}$ after transmission.</p>
+        <p>Speed of sound in seawater $= 1500\,\text{m s}^{-1}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State why ultrasound is used rather than audible sound for sonar. [1]</li>
+          <li>(b) Calculate the depth of the sea. [3]</li>
+          <li>(c) A second ship is moving towards the first ship while sounding a horn. Explain how the frequency heard by the first ship changes. [2]</li>
+          <li>(d) State the name of this effect. [1]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q12-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q12-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Ultrasound has a shorter wavelength, so it reflects more effectively from small objects / gives better resolution.</li>
+          <li>(b) Distance travelled by pulse $= 1500 \times 0.064 = 96\,\text{m}$. Depth $= 96 / 2 = 48\,\text{m}$.</li>
+          <li>(c) The observed frequency increases because the source is moving towards the observer, compressing the wavefronts.</li>
+          <li>(d) Doppler effect.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic-Paper Practice Page Part I -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">Topic-Paper Practice: Part I</h3>
+
+    <!-- A. Waves -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">A. Waves</h4>
+
+    <div id="q13" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A1 — Wave Speed</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A wave has frequency $8.0\,\text{Hz}$ and wavelength $0.45\,\text{m}$. Calculate its speed.</p>
+      </div>
+      <button onclick="toggleAnswer('q13-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q13-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$v = f\lambda = 8.0 \times 0.45 = 3.6\,\text{m s}^{-1}$$</p>
+      </div>
+    </div>
+
+    <div id="q14" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A2 — Frequency from Period</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A wave has period $0.0040\,\text{s}$. Calculate its frequency.</p>
+      </div>
+      <button onclick="toggleAnswer('q14-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q14-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$f = \frac{1}{T} = \frac{1}{0.0040} = 250\,\text{Hz}$$</p>
+      </div>
+    </div>
+
+    <div id="q15" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A3 — Transverse vs Longitudinal</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>State the difference between a transverse wave and a longitudinal wave.</p>
+      </div>
+      <button onclick="toggleAnswer('q15-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q15-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>In a transverse wave, the oscillations are perpendicular to the direction of wave travel. In a longitudinal wave, the oscillations are parallel to the direction of wave travel.</p>
+      </div>
+    </div>
+
+    <!-- B. EM Spectrum -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">B. Electromagnetic Spectrum</h4>
+
+    <div id="q16" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B1 — EM Spectrum Order</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Write the EM spectrum in order from lowest frequency to highest frequency.</p>
+      </div>
+      <button onclick="toggleAnswer('q16-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q16-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Radio, microwave, infrared, visible, ultraviolet, X-ray, gamma.</p>
+      </div>
+    </div>
+
+    <div id="q17" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B2 — Ultraviolet: Use and Harm</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Give one use and one harmful effect of ultraviolet radiation.</p>
+      </div>
+      <button onclick="toggleAnswer('q17-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q17-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Use: sterilising / security marking. Harmful effect: skin damage / sunburn / increased cancer risk.</p>
+      </div>
+    </div>
+
+    <div id="q18" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B3 — X-Ray Safety</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Explain why X-rays must be used carefully in hospitals.</p>
+      </div>
+      <button onclick="toggleAnswer('q18-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q18-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>X-rays are ionising and can damage cells or DNA, so exposure time and dose should be limited.</p>
+      </div>
+    </div>
+
+    <!-- C. Light -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">C. Light</h4>
+
+    <div id="q19" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C1 — Refractive Index</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A ray has $i = 42^\circ$ and $r = 28^\circ$ when entering glass. Calculate $n$.</p>
+      </div>
+      <button onclick="toggleAnswer('q19-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q19-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$n = \frac{\sin 42^\circ}{\sin 28^\circ} = 1.43$$</p>
+      </div>
+    </div>
+
+    <div id="q20" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C2 — Critical Angle</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A material has refractive index $1.40$. Calculate the critical angle for light going from the material to air.</p>
+      </div>
+      <button onclick="toggleAnswer('q20-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q20-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$\sin c = \frac{1}{1.40}$$</p>
+        <p>$$c = 45.6^\circ$$</p>
+      </div>
+    </div>
+
+    <div id="q21" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C3 — Conditions for Total Internal Reflection</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>State the two conditions for total internal reflection.</p>
+      </div>
+      <button onclick="toggleAnswer('q21-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q21-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>Light travels from a more optically dense medium to a less optically dense medium.</li>
+          <li>The angle of incidence is greater than the critical angle.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- D. Sound -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">D. Sound</h4>
+
+    <div id="q22" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">D1 — Human Hearing Range</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[1 mark]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Which sound can be heard by most humans: $15\,\text{Hz}$, $600\,\text{Hz}$, or $25\,000\,\text{Hz}$?</p>
+      </div>
+      <button onclick="toggleAnswer('q22-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q22-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$600\,\text{Hz}$</p>
+      </div>
+    </div>
+
+    <div id="q23" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">D2 — Pitch and Loudness</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>State the wave property that determines pitch and the property that determines loudness.</p>
+      </div>
+      <button onclick="toggleAnswer('q23-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q23-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Pitch: frequency. Loudness: amplitude.</p>
+      </div>
+    </div>
+
+    <div id="q24" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">D3 — Sound in a Vacuum</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Explain why sound cannot travel through a vacuum.</p>
+      </div>
+      <button onclick="toggleAnswer('q24-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q24-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Sound needs particles to vibrate and transfer energy; a vacuum has no particles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Part II: Chapters 18–19 -->
+<section id="part-ii" class="space-y-8 mt-12">
+  <h2 class="text-2xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3">Part II: Chapters 18–19</h2>
+
+  <!-- Section A: Density and Pressure -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">A. Density and Pressure</h3>
+
+    <!-- q25: Worked pattern density -->
+    <div id="q25" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Density by Displacement</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A stone is lowered into a measuring cylinder.</p>
+        <p>Initial water volume $= 42\,\text{cm}^3$. Final volume $= 68\,\text{cm}^3$. Mass of stone $= 78\,\text{g}$.</p>
+      </div>
+      <button onclick="toggleAnswer('q25-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q25-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$V = 68 - 42 = 26\,\text{cm}^3$$</p>
+        <p>$$\rho = \frac{m}{V} = \frac{78}{26} = 3.0\,\text{g cm}^{-3}$$</p>
+        <p>If SI units are required: $3.0\,\text{g cm}^{-3} = 3000\,\text{kg m}^{-3}$.</p>
+      </div>
+    </div>
+
+    <!-- q26: Mini practice hydraulics -->
+    <div id="q26" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Hydraulic Force</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A force of $60\,\text{N}$ acts on a small piston of area $0.0020\,\text{m}^2$. The output piston has area $0.050\,\text{m}^2$. Calculate the output force.</p>
+      </div>
+      <button onclick="toggleAnswer('q26-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q26-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$p = \frac{F_1}{A_1} = \frac{60}{0.0020} = 30\,000\,\text{Pa}$$</p>
+        <p>$$F_2 = pA_2 = 30\,000 \times 0.050 = 1500\,\text{N}$$</p>
+      </div>
+    </div>
+
+    <!-- q27: Q4 Fluid pressure -->
+    <div id="q27" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q4 — Fluid Pressure and Total Pressure</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[9 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A submarine is $45\,\text{m}$ below the surface of the sea.</p>
+        <p>Density of seawater $= 1030\,\text{kg m}^{-3}$. Gravitational field strength $= 10\,\text{N kg}^{-1}$. Atmospheric pressure $= 1.01 \times 10^5\,\text{Pa}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State the equation linking pressure difference, density, depth and gravitational field strength. [1]</li>
+          <li>(b) Calculate the pressure due to the seawater at this depth. [3]</li>
+          <li>(c) Calculate the total pressure acting on the submarine. [2]</li>
+          <li>(d) The submarine dives deeper. Explain why the pressure increases with depth. [2]</li>
+          <li>(e) State whether the pressure at the same depth depends on the surface area of the submarine. [1]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q27-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q27-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$\Delta p = \rho g \Delta h$$</li>
+          <li>(b) $$\Delta p = 1030 \times 10 \times 45 = 4.64 \times 10^5\,\text{Pa}$$</li>
+          <li>(c) $$p_{\text{total}} = 4.64 \times 10^5 + 1.01 \times 10^5 = 5.65 \times 10^5\,\text{Pa}$$</li>
+          <li>(d) Pressure increases because the weight of the fluid above the submarine increases with depth.</li>
+          <li>(e) No; pressure at a given depth does not depend on the surface area of the submarine.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- q28: Q9 Hydraulics -->
+    <div id="q28" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q9 — Pressure, Density and Hydraulics</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[7 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A hydraulic lift has two pistons.</p>
+        <p>Area of small piston $= 0.015\,\text{m}^2$. Area of large piston $= 0.45\,\text{m}^2$. A force of $120\,\text{N}$ is applied to the small piston.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State Pascal's principle. [2]</li>
+          <li>(b) Calculate the pressure produced in the liquid. [2]</li>
+          <li>(c) Calculate the output force on the large piston. [2]</li>
+          <li>(d) State one practical reason why the output energy cannot be greater than the input energy. [1]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q28-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q28-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Pressure applied to an enclosed liquid is transmitted equally throughout the liquid.</li>
+          <li>(b) $$p = \frac{F}{A} = \frac{120}{0.015} = 8000\,\text{Pa}$$</li>
+          <li>(c) $$F_2 = pA_2 = 8000 \times 0.45 = 3600\,\text{N}$$</li>
+          <li>(d) Energy cannot be created; some energy is lost to friction / heat in the hydraulic fluid.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section B: States of Matter -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">B. States of Matter</h3>
+
+    <!-- q29: Mini practice evaporative cooling -->
+    <div id="q29" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Evaporative Cooling</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Explain why wet skin feels cooler when air blows across it. Use ideas about evaporation and molecular kinetic energy.</p>
+      </div>
+      <button onclick="toggleAnswer('q29-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q29-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Air movement increases the rate of evaporation. The fastest molecules escape from the water surface, so the average kinetic energy of the remaining molecules decreases. Since temperature depends on average kinetic energy, the liquid (and skin) cools.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section C: Thermal Physics -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">C. Specific Heat Capacity and Latent Heat</h3>
+
+    <!-- q30: Worked pattern specific heat capacity -->
+    <div id="q30" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Specific Heat Capacity</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A $0.80\,\text{kg}$ metal block is heated by a $75\,\text{W}$ heater for $6.0\,\text{min}$. Its temperature rises from $19^\circ\text{C}$ to $44^\circ\text{C}$.</p>
+      </div>
+      <button onclick="toggleAnswer('q30-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q30-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$E = Pt = 75 \times (6.0 \times 60) = 27\,000\,\text{J}$$</p>
+        <p>$$\Delta T = 44 - 19 = 25^\circ\text{C}$$</p>
+        <p>$$c = \frac{E}{m\Delta T} = \frac{27\,000}{0.80 \times 25} = 1350\,\text{J kg}^{-1}\text{K}^{-1}$$</p>
+      </div>
+    </div>
+
+    <!-- q31: Mini practice latent heat -->
+    <div id="q31" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Specific Latent Heat</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A heater supplies $40\,\text{W}$ for $240\,\text{s}$. With the heater on, $58\,\text{g}$ of liquid is collected. With the heater off, $10\,\text{g}$ is collected. Calculate the specific latent heat.</p>
+      </div>
+      <button onclick="toggleAnswer('q31-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q31-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$m_{\text{heater only}} = 58 - 10 = 48\,\text{g} = 0.048\,\text{kg}$$</p>
+        <p>$$E = Pt = 40 \times 240 = 9600\,\text{J}$$</p>
+        <p>$$L = \frac{Pt}{m_{\text{heater only}}} = \frac{9600}{0.048} = 2.0 \times 10^5\,\text{J kg}^{-1}$$</p>
+      </div>
+    </div>
+
+    <!-- q32: Q6 Thermal energy and latent heat -->
+    <div id="q32" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q6 — Thermal Energy and Latent Heat</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[10 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A student uses steam at $100^\circ\text{C}$ to heat $0.40\,\text{kg}$ of milk from $12^\circ\text{C}$ to $65^\circ\text{C}$.</p>
+        <p>Specific heat capacity of milk $= 3900\,\text{J kg}^{-1}\,^\circ\text{C}^{-1}$. Specific latent heat of vaporisation of water $= 2.3 \times 10^6\,\text{J kg}^{-1}$. Specific heat capacity of water $= 4200\,\text{J kg}^{-1}\,^\circ\text{C}^{-1}$.</p>
+        <p>Assume that all the energy released by the steam is transferred to the milk.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Calculate the energy needed to heat the milk to $65^\circ\text{C}$. [3]</li>
+          <li>(b) When steam condenses to water at $100^\circ\text{C}$, it releases latent heat. Calculate the mass of steam needed if only condensation is considered. [3]</li>
+          <li>(c) In reality, the condensed water cools from $100^\circ\text{C}$ to $65^\circ\text{C}$. Explain whether the actual mass of steam needed is smaller or larger than your answer in part (b). [2]</li>
+          <li>(d) Explain why temperature does not change while steam is condensing. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q32-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q32-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$Q = mc\Delta T = 0.40 \times 3900 \times (65 - 12) = 8.27 \times 10^4\,\text{J}$$</li>
+          <li>(b) $$m = \frac{Q}{L} = \frac{8.27 \times 10^4}{2.3 \times 10^6} = 0.036\,\text{kg}\,(36\,\text{g})$$</li>
+          <li>(c) Smaller. The condensed water also releases heat as it cools from $100^\circ\text{C}$ to $65^\circ\text{C}$, so less steam is needed to provide the same energy.</li>
+          <li>(d) During condensation, energy is used to overcome intermolecular forces / break bonds, not to increase the average kinetic energy of the molecules, so the temperature stays constant.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- q33: Q12 Integrated thermal and pressure -->
+    <div id="q33" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q12 — Integrated Thermal and Pressure Challenge</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[10 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A metal container has a base area of $0.080\,\text{m}^2$. It contains $6.0\,\text{kg}$ of water. The water is heated from $18^\circ\text{C}$ to $100^\circ\text{C}$.</p>
+        <p>Specific heat capacity of water $= 4200\,\text{J kg}^{-1}\,^\circ\text{C}^{-1}$. Gravitational field strength $= 10\,\text{N kg}^{-1}$. Density of water $= 1000\,\text{kg m}^{-3}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Calculate the thermal energy needed to heat the water to $100^\circ\text{C}$. [3]</li>
+          <li>(b) Calculate the weight of the water. [1]</li>
+          <li>(c) Calculate the pressure exerted by the water on the base of the container due to its weight. [2]</li>
+          <li>(d) Use density to calculate the volume of water in the container. [2]</li>
+          <li>(e) Calculate the depth of water in the container. [1]</li>
+          <li>(f) Check your answer to part (c) by using $p = h\rho g$. [1]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q33-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q33-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$Q = mc\Delta T = 6.0 \times 4200 \times (100 - 18) = 2.07 \times 10^6\,\text{J}$$</li>
+          <li>(b) $$W = mg = 6.0 \times 10 = 60\,\text{N}$$</li>
+          <li>(c) $$p = \frac{F}{A} = \frac{60}{0.080} = 750\,\text{Pa}$$</li>
+          <li>(d) $$V = \frac{m}{\rho} = \frac{6.0}{1000} = 6.0 \times 10^{-3}\,\text{m}^3$$</li>
+          <li>(e) $$h = \frac{V}{A} = \frac{6.0 \times 10^{-3}}{0.080} = 0.075\,\text{m}$$</li>
+          <li>(f) $$p = h\rho g = 0.075 \times 1000 \times 10 = 750\,\text{Pa}$$</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section D: Gas Laws -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">D. Gas Laws and Kinetic Theory</h3>
+
+    <!-- q34: Worked pattern gas laws -->
+    <div id="q34" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Worked Pattern: Charles' Law</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[Practice]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A gas has volume $1.20 \times 10^{-3}\,\text{m}^3$ at $18^\circ\text{C}$. It is warmed to $63^\circ\text{C}$ at constant pressure.</p>
+      </div>
+      <button onclick="toggleAnswer('q34-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q34-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$T_1 = 18 + 273 = 291\,\text{K},\quad T_2 = 63 + 273 = 336\,\text{K}$$</p>
+        <p>$$V_2 = \frac{V_1T_2}{T_1} = \frac{(1.20 \times 10^{-3}) \times 336}{291} = 1.39 \times 10^{-3}\,\text{m}^3$$</p>
+      </div>
+    </div>
+
+    <!-- q35: Mini practice mean kinetic energy -->
+    <div id="q35" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Mini Practice: Mean Kinetic Energy</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Calculate the mean kinetic energy of one molecule at $320\,\text{K}$. Then explain what happens to the mean kinetic energy if the gas is compressed at constant temperature.</p>
+      </div>
+      <button onclick="toggleAnswer('q35-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q35-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$\frac{1}{2}m c_{\text{rms}}^2 = \frac{3}{2}kT = 1.5 \times 1.38 \times 10^{-23} \times 320 = 6.6 \times 10^{-21}\,\text{J}$$</p>
+        <p>If the gas is compressed at constant temperature, the mean kinetic energy stays the same because mean kinetic energy is directly proportional to absolute temperature.</p>
+      </div>
+    </div>
+
+    <!-- q36: Q2 Gas laws -->
+    <div id="q36" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q2 — Gas Laws</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[9 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A sealed syringe contains $80\,\text{cm}^3$ of air at a pressure of $1.05 \times 10^5\,\text{Pa}$ and a temperature of $27^\circ\text{C}$.</p>
+        <p>The plunger is pushed in so that the volume becomes $50\,\text{cm}^3$. The temperature of the air then rises to $47^\circ\text{C}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) Convert both temperatures to kelvin. [2]</li>
+          <li>(b) State the gas law relationship that should be used when pressure, volume and temperature all change for a fixed mass of gas. [1]</li>
+          <li>(c) Calculate the final pressure of the air. [4]</li>
+          <li>(d) Explain, using ideas about molecules, why reducing the volume increases the gas pressure. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q36-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q36-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $T_1 = 27 + 273 = 300\,\text{K}$; $T_2 = 47 + 273 = 320\,\text{K}$</li>
+          <li>(b) $$\frac{p_1V_1}{T_1} = \frac{p_2V_2}{T_2}$$</li>
+          <li>(c) $$p_2 = \frac{p_1V_1T_2}{V_2T_1} = \frac{1.05 \times 10^5 \times 80 \times 320}{50 \times 300} = 1.79 \times 10^5\,\text{Pa}$$</li>
+          <li>(d) Reducing the volume makes molecules travel a shorter distance between collisions with the walls, so collisions are more frequent, producing a greater force per unit area and therefore higher pressure.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- q37: Q8 Ideal gas -->
+    <div id="q37" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q8 — Ideal Gas Law from Data</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[8 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A sealed glass bulb contains helium gas.</p>
+        <p>Volume of bulb $= 2.4 \times 10^{-3}\,\text{m}^3$. Pressure $= 1.20 \times 10^5\,\text{Pa}$. Temperature $= 22^\circ\text{C}$. Boltzmann constant $= 1.38 \times 10^{-23}\,\text{J K}^{-1}$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State the ideal gas equation using number of molecules $N$. [1]</li>
+          <li>(b) Convert the temperature to kelvin. [1]</li>
+          <li>(c) Calculate the number of helium atoms in the bulb. [4]</li>
+          <li>(d) The temperature is increased while the volume remains constant. Explain what happens to the pressure in terms of molecular motion. [2]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q37-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q37-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) $$pV = NkT$$</li>
+          <li>(b) $T = 22 + 273 = 295\,\text{K}$</li>
+          <li>(c) $$N = \frac{pV}{kT} = \frac{1.20 \times 10^5 \times 2.4 \times 10^{-3}}{1.38 \times 10^{-23} \times 295} = 7.1 \times 10^{22}$$</li>
+          <li>(d) Molecules move faster / have greater average kinetic energy; they collide with the walls more often and with greater force, so pressure increases.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- q38: Q11 Kinetic theory -->
+    <div id="q38" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">Q11 — Kinetic Theory of Gases</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[9 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>The mass of one molecule of a gas is $4.8 \times 10^{-26}\,\text{kg}$. The gas is at a temperature of $320\,\text{K}$. Boltzmann constant $= 1.38 \times 10^{-23}\,\text{J K}^{-1}$.</p>
+        <p>The kinetic theory equation is $\frac{1}{2}m c_{\text{rms}}^2 = \frac{3}{2}kT$.</p>
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) State what is meant by root-mean-square speed. [1]</li>
+          <li>(b) Rearrange the equation to make $c_{\text{rms}}$ the subject. [2]</li>
+          <li>(c) Calculate the root-mean-square speed of the gas molecules. [3]</li>
+          <li>(d) The gas is heated at constant volume. Explain why the pressure increases. Your answer should refer to molecular speed, collisions and force on the container wall. [3]</li>
+        </ol>
+      </div>
+      <button onclick="toggleAnswer('q38-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q38-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <ol class="list-decimal list-inside space-y-1 ml-4">
+          <li>(a) The square root of the mean of the squares of the speeds of the molecules.</li>
+          <li>(b) $$c_{\text{rms}} = \sqrt{\frac{3kT}{m}}$$</li>
+          <li>(c) $$c_{\text{rms}} = \sqrt{\frac{3 \times 1.38 \times 10^{-23} \times 320}{4.8 \times 10^{-26}}} = 5.3 \times 10^2\,\text{m s}^{-1}$$</li>
+          <li>(d) Heating increases the average kinetic energy, so molecules move faster. They hit the walls more often and with greater force. Since pressure is force per unit area, the pressure on the container walls increases.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic-Paper Practice Page Part II -->
+  <div class="space-y-6">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">Topic-Paper Practice: Part II</h3>
+
+    <!-- A. Density and pressure -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">A. Density and Pressure</h4>
+
+    <div id="q39" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A1 — Density in Two Units</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[4 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A $144\,\text{g}$ object raises the water level in a cylinder from $38\,\text{cm}^3$ to $62\,\text{cm}^3$. Calculate its density in $\text{g cm}^{-3}$ and $\text{kg m}^{-3}$.</p>
+      </div>
+      <button onclick="toggleAnswer('q39-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q39-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$V = 62 - 38 = 24\,\text{cm}^3$$</p>
+        <p>$$\rho = \frac{m}{V} = \frac{144}{24} = 6.0\,\text{g cm}^{-3} = 6000\,\text{kg m}^{-3}$$</p>
+      </div>
+    </div>
+
+    <div id="q40" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A2 — Pressure from Weight</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A box has weight $480\,\text{N}$ and base area $0.32\,\text{m}^2$. Calculate the pressure on the floor.</p>
+      </div>
+      <button onclick="toggleAnswer('q40-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q40-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$p = \frac{F}{A} = \frac{480}{0.32} = 1500\,\text{Pa}$$</p>
+      </div>
+    </div>
+
+    <div id="q41" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">A3 — Pressure at Depth</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Calculate the pressure due to oil of density $850\,\text{kg m}^{-3}$ at a depth of $4.5\,\text{m}$.</p>
+      </div>
+      <button onclick="toggleAnswer('q41-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q41-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$\Delta p = \rho gh = 850 \times 10 \times 4.5 = 3.83 \times 10^4\,\text{Pa}$$</p>
+      </div>
+    </div>
+
+    <!-- B. Thermal physics -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">B. Thermal Physics</h4>
+
+    <div id="q42" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B1 — Specific Heat Capacity</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A $1.5\,\text{kg}$ liquid is heated by $63\,000\,\text{J}$ and its temperature rises by $20\,\text{K}$. Calculate its specific heat capacity.</p>
+      </div>
+      <button onclick="toggleAnswer('q42-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q42-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$c = \frac{Q}{m\Delta T} = \frac{63\,000}{1.5 \times 20} = 2100\,\text{J kg}^{-1}\text{K}^{-1}$$</p>
+      </div>
+    </div>
+
+    <div id="q43" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B2 — Latent Heat of Fusion</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>$0.20\,\text{kg}$ of a substance melts at constant temperature. Its specific latent heat of fusion is $1.8 \times 10^5\,\text{J kg}^{-1}$. Calculate the energy needed.</p>
+      </div>
+      <button onclick="toggleAnswer('q43-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q43-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$Q = mL = 0.20 \times 1.8 \times 10^5 = 3.6 \times 10^4\,\text{J}$$</p>
+      </div>
+    </div>
+
+    <div id="q44" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">B3 — Constant Temperature During Melting</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Explain why temperature remains constant during melting even though energy is supplied.</p>
+      </div>
+      <button onclick="toggleAnswer('q44-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q44-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>Energy is used to overcome intermolecular forces and break the rigid structure, not to increase the average kinetic energy of the particles. Since temperature depends on average kinetic energy, it remains constant.</p>
+      </div>
+    </div>
+
+    <!-- C. Gas laws and kinetic theory -->
+    <h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">C. Gas Laws and Kinetic Theory</h4>
+
+    <div id="q45" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C1 — Boyle's Law</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[2 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A gas has pressure $120\,\text{kPa}$ at volume $75\,\text{cm}^3$. It is compressed to $45\,\text{cm}^3$ at constant temperature. Calculate the new pressure.</p>
+      </div>
+      <button onclick="toggleAnswer('q45-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q45-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$p_2 = \frac{p_1V_1}{V_2} = \frac{120 \times 75}{45} = 200\,\text{kPa}$$</p>
+      </div>
+    </div>
+
+    <div id="q46" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C2 — Pressure Law</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>A sealed gas has pressure $95\,\text{kPa}$ at $20^\circ\text{C}$. It is heated to $80^\circ\text{C}$ at constant volume. Calculate the new pressure.</p>
+      </div>
+      <button onclick="toggleAnswer('q46-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q46-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>$$T_1 = 293\,\text{K},\quad T_2 = 353\,\text{K}$$</p>
+        <p>$$p_2 = \frac{p_1T_2}{T_1} = \frac{95 \times 353}{293} = 114\,\text{kPa}$$</p>
+      </div>
+    </div>
+
+    <div id="q47" class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold uppercase">C3 — Pressure Rise on Heating</h3>
+        <span class="text-xs bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 font-bold px-2 py-0.5 rounded">[3 marks]</span>
+      </div>
+      <div class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+        <p>Use kinetic theory to explain why pressure rises when a sealed gas is heated.</p>
+      </div>
+      <button onclick="toggleAnswer('q47-ans')" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-xs font-bold transition">Reveal Answer</button>
+      <div id="q47-ans" class="hidden p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/50 text-xs rounded-lg space-y-3">
+        <p>When heated, molecules have greater average kinetic energy and move faster. They collide with the walls more often and with greater force. Since pressure is force per unit area, the pressure increases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
             </div>
 
         </main>
